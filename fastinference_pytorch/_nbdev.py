@@ -11,8 +11,8 @@ index = {"FillMissing": "00_tabular.ipynb",
 
 modules = ["tabular.py"]
 
-doc_url = "https://muellerzr.github.io/fastinference-pytorch/"
+doc_url = "https://muellerzr.github.io/fastinference_pytorch/"
 
-git_url = "https://github.com/muellerzr/fastinference-pytorch/tree/master/"
+git_url = "https://github.com/muellerzr/fastinference_pytorch/tree/master/"
 
 def custom_doc_links(name): return None

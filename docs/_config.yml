@@ -61,4 +61,4 @@ sidebars:
 permalink: pretty
 
 theme: jekyll-theme-cayman
-baseurl: /fastinference-pytorch/
+baseurl: /fastinference_pytorch/
