@@ -6,4 +6,4 @@ To use this library you **must** export your `Learner` using `fastinference`
 
 ## Install
 
-`pip install fastinference-pytorch`
+`pip install fastinference_pytorch`
