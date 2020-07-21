@@ -4,12 +4,22 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"FillMissing": "00_tabular.ipynb",
          "Categorize": "00_tabular.ipynb",
-         "Normalize": "00_tabular.ipynb",
+         "Normalize": "01b_vision.augment.ipynb",
          "apply_procs": "00_tabular.ipynb",
          "TabularDataset": "00_tabular.ipynb",
-         "tabular_learner": "00_tabular.ipynb"}
+         "tabular_learner": "00_tabular.ipynb",
+         "Image.Image.crop_pad": "01b_vision.augment.ipynb",
+         "CropPad": "01b_vision.augment.ipynb",
+         "Resize": "01b_vision.augment.ipynb",
+         "RandomResizedCrop": "01b_vision.augment.ipynb",
+         "RatioResize": "01b_vision.augment.ipynb",
+         "to_device": "01b_vision.augment.ipynb",
+         "apply": "01b_vision.augment.ipynb",
+         "noop": "01b_vision.augment.ipynb",
+         "IntToFloatTensor": "01b_vision.augment.ipynb"}
 
-modules = ["tabular.py"]
+modules = ["tabular.py",
+           "vision/augment.py"]
 
 doc_url = "https://muellerzr.github.io/fastinference_pytorch/"
 

@@ -1,10 +1,10 @@
 SRC = $(wildcard ./*.ipynb)
 
-all: fastinference-pytorch docs
+all: fastinference_pytorch docs
 
-fastinference-pytorch: $(SRC)
+fastinference_pytorch: $(SRC)
 	nbdev_build_lib
-	touch fastinference-pytorch
+	touch fastinference_pytorch
 
 sync:
 	nbdev_update_lib
