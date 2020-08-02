@@ -13,13 +13,14 @@ index = {"FillMissing": "00_tabular.ipynb",
          "Resize": "01b_vision.augment.ipynb",
          "RandomResizedCrop": "01b_vision.augment.ipynb",
          "RatioResize": "01b_vision.augment.ipynb",
-         "to_device": "01b_vision.augment.ipynb",
-         "apply": "01b_vision.augment.ipynb",
-         "noop": "01b_vision.augment.ipynb",
-         "IntToFloatTensor": "01b_vision.augment.ipynb"}
+         "IntToFloatTensor": "01b_vision.augment.ipynb",
+         "noop": "04_utils.ipynb",
+         "apply": "04_utils.ipynb",
+         "to_device": "04_utils.ipynb"}
 
 modules = ["tabular.py",
-           "vision/augment.py"]
+           "vision/augment.py",
+           "utils.py"]
 
 doc_url = "https://muellerzr.github.io/fastinference_pytorch/"
 
