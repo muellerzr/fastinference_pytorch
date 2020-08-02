@@ -3,8 +3,10 @@
 __all__ = ['noop', 'apply', 'to_device']
 
 # Cell
+import torch
+import numpy as np
 from torch import Tensor
-from fastcore.utils import is_listy
+from fastcore.utils import is_listy, is_iter
 
 # Cell
 def noop(x=None, *args,**kwargs):
@@ -24,3 +26,8 @@ def to_device(b, device='cpu'):
     "Recursively put `b` on `device`."
     def _inner(o): return o.to(device, non_blocking=True) if isinstance(o,Tensor) else o.to_device(device) if hasattr(o, "to_device") else o
     return apply(_inner, b)
+
+# Cell
+def _array2tensor(x):
+    if x.dtype==np.uint16: x.astype(np.float32)
+    return torch.from_numpy(x)
