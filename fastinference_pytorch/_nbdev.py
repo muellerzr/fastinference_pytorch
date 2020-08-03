@@ -22,22 +22,23 @@ index = {"FillMissing": "00_tabular.ipynb",
          "IntToFloatTensor": "01a_transforms.vision.ipynb",
          "load_data": "03_rebuild.ipynb",
          "load_model": "03_rebuild.ipynb",
-         "get_image": "03_rebuild.ipynb",
          "get_tfm": "03_rebuild.ipynb",
          "generate_pipeline": "03_rebuild.ipynb",
          "make_pipelines": "03_rebuild.ipynb",
-         "Learner": "03_rebuild.ipynb",
-         "noop": "04_utils.ipynb",
-         "apply": "04_utils.ipynb",
-         "retain_type": "04_utils.ipynb",
-         "retain_meta": "04_utils.ipynb",
-         "to_device": "04_utils.ipynb",
-         "tensor": "04_utils.ipynb"}
+         "get_image": "04_Learner.ipynb",
+         "Learner": "04_Learner.ipynb",
+         "noop": "05_utils.ipynb",
+         "apply": "05_utils.ipynb",
+         "retain_type": "05_utils.ipynb",
+         "retain_meta": "05_utils.ipynb",
+         "to_device": "05_utils.ipynb",
+         "tensor": "05_utils.ipynb"}
 
 modules = ["tabular.py",
            "transforms/vision.py",
            "transforms/data.py",
            "rebuild.py",
+           "learner.py",
            "utils.py"]
 
 doc_url = "https://muellerzr.github.io/fastinference_pytorch/"
