@@ -2,6 +2,10 @@
   "fastinference_pytorch": {
     "Overview": "/",
     "tabular": "/tabular",
-    "Title": "/vision_augment"
+    "transforms.vision": "/transforms.vision",
+    "transforms.data": "/transforms.data",
+    "rebuild": "/rebuild",
+    "learner": "/learner",
+    "utils": "/utils"
   }
 }

@@ -13,8 +13,20 @@ entries:
       title: tabular
       url: /tabular
     - output: web,pdf
-      title: Title
-      url: /vision_augment
+      title: transforms.vision
+      url: /transforms.vision
+    - output: web,pdf
+      title: transforms.data
+      url: /transforms.data
+    - output: web,pdf
+      title: rebuild
+      url: /rebuild
+    - output: web,pdf
+      title: learner
+      url: /learner
+    - output: web,pdf
+      title: utils
+      url: /utils
     output: web
     title: fastinference_pytorch
   output: web
