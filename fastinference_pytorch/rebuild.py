@@ -25,10 +25,26 @@ def load_data(path:Path=Path('.'), fn='data'):
     return tfmd_dict
 
 # Cell
-def load_model(path:Path='.', fn='model', cpu=True):
-    if '.pkl' not in fn: fn += '.pkl'
-    path = f'{path}/{fn}'
-    return torch.load(path, map_location='cpu' if cpu else None)
+def load_model(path:Path='.', fn='model', cpu=True, onnx=False):
+    if not onnx:
+        if '.pkl' not in fn: fn += '.pkl'
+        path = f'{path}/{fn}'
+        return torch.load(path, map_location='cpu' if cpu else None)
+    else:
+        try:
+            import onnxruntime as ort
+        except ImportError:
+            print('to use ONNX you must have `onnxruntime` installed\n\
+            Install it with `pip install onnxruntime-gpu`')
+        if '.onnx' not in fn: fn += '.onnx'
+        path = f'{path}/{fn}'
+        ort_session = ort.InferenceSession(path)
+        if not cpu:
+            try:
+                ort_session.set_providers(['CUDAExecutionProvider'])
+            except:
+                ort_session.set_providers(['CPUExecutionProvider'])
+        return ort_session
 
 # Cell
 def get_tfm(key, tfms):

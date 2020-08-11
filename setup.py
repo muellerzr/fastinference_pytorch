@@ -20,6 +20,22 @@ statuses = [ '1 - Planning', '2 - Pre-Alpha', '3 - Alpha',
     '4 - Beta', '5 - Production/Stable', '6 - Mature', '7 - Inactive' ]
 py_versions = '2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8'.split()
 
+def parse_requirements(name):
+    return cfg[name].strip("\n").split("\n")
+
+requirements = parse_requirements("requirements")
+vis_req = parse_requirements("vision")
+text_req = parse_requirements("text")
+tab_req = parse_requirements("tabular")
+all_req = parse_requirements("all")
+
+extras = {}
+extras['vision'] = vis_req
+extras['text'] = text_req
+extras['tab'] = tab_req
+extras['all'] = all_req
+
+
 requirements = cfg.get('requirements','').split()
 lic = licenses[cfg['license']]
 min_python = cfg['min_python']
@@ -32,11 +48,15 @@ setuptools.setup(
         'Intended Audience :: ' + cfg['audience'].title(),
         'License :: ' + lic[1],
         'Natural Language :: ' + cfg['language'].title(),
-    ] + ['Programming Language :: Python :: '+o for o in py_versions[py_versions.index(min_python):]],
+    ] + [
+        'Programming Language :: Python :: ' + o
+        for o in py_versions[py_versions.index(min_python):]
+    ], 
     url = cfg['git_url'],
     packages = setuptools.find_packages(),
     include_package_data = True,
     install_requires = requirements,
+    extra_require=extras,
     dependency_links = cfg.get('dep_links','').split(),
     python_requires  = '>=' + cfg['min_python'],
     long_description = open('README.md').read(),
